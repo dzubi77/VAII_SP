@@ -5,16 +5,34 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="/css/login_page_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container-fluid">
             <a class="btn btn-secondary" href="homepage.html">Home</a>
+            <span class="navbar-text" style="font-style: italic; font-size: 100%">New York Rangers</span>
         </div>
     </nav>
 
-
+    <form action="#">
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label"><b>Zadajte pouzivatelske meno:</b></label>
+            <input type="email" class="form-control" id="email" placeholder="pouzivatelske meno" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label"><b>Zadajte heslo:</b></label>
+            <input type="password" class="form-control" id="pwd" placeholder="heslo" name="pswd">
+        </div>
+        <!--<div class="form-check mb-3">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Zostat prihlaseny
+            </label>
+        </div>
+        -->
+        <button type="submit" class="btn btn-primary">Potvrdit</button>
+    </form>
 
 </body>
 </html>
