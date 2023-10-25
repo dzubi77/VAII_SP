@@ -11,6 +11,10 @@ body {
     font-style: italic;
 }
 
+hr {
+    height: 2px;
+}
+
 footer {
     background-color: darkslategray;
     text-align: center;
@@ -18,4 +22,22 @@ footer {
     width: 100%;
     position: fixed;
     color: white;
+}
+
+.article_container {
+    margin-top: 5%;
+}
+
+.article {
+    border-top: solid;
+    margin-bottom: 5%;
+    border-bottom: solid;
+}
+
+.article img {
+
+}
+
+.article p {
+
 }
