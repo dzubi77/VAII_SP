@@ -3,14 +3,12 @@ package com.example.vaii.controller;
 import com.example.vaii.model.PlayerInfo;
 import com.example.vaii.service.PlayerInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "api/player_info")
 public class PlayerInfoController {
     private final PlayerInfoService playerInfoService;
 

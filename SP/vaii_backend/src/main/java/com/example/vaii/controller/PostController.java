@@ -3,14 +3,12 @@ package com.example.vaii.controller;
 import com.example.vaii.model.Post;
 import com.example.vaii.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "api/posts")
 public class PostController {
     private final PostService postService;
 
