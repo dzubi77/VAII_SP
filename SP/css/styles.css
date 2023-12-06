@@ -4,3 +4,11 @@ form {
     padding-right: 30%;
 }
 
+.error {
+    color: red;
+}
+
+.signup.sign_up {
+    text-align: center;
+}
+
