@@ -32,9 +32,9 @@ public class UserController {
         return this.userService.loginUser(loginRequest);
     }
 
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteUser(@PathVariable UUID id) {
+    public void deleteUser(UUID id) {
         this.userService.deleteUserByID(id);
     }
 }

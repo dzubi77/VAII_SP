@@ -11,7 +11,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -24,13 +23,13 @@ public class UserService {
         return this.userRepository.findAll();
     }
 
-    public ResponseEntity<String> createUser(User1 user) {
+    public ResponseEntity<String> createUser(User1 pUser) {
         // TODO: hash password
-        Optional<User1> userByUN = this.userRepository.findUserByUsername(user.getUsername());
-        if (userByUN.isPresent()) {
+        User1 user = this.userRepository.findUserByUsername(pUser.getUsername());
+        if (user != null) {
             throw new UsernameTakenException("Username taken!");
         } else {
-            this.userRepository.save(user);
+            this.userRepository.save(pUser);
             return ResponseEntity.ok("User created successfully!");
         }
     }
@@ -40,9 +39,8 @@ public class UserService {
     }
 
     public boolean authenticateUser(String username, String password) {
-        Optional<User1> userOp = this.userRepository.findUserByUsername(username);
-        if (userOp.isPresent()) {
-            User1 user = userOp.get();
+        User1 user = this.userRepository.findUserByUsername(username);
+        if (user != null) {
             return this.passwordEncoder.matches(password, user.getPassword());
         }
         return false;
